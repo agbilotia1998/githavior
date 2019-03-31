@@ -1,6 +1,7 @@
 function main2(){
+	var jso = require('./static/sample.json');
+	/*
 	var obj = {
-		"Pic":"Ab",
 		"Username":"Prakhar Gupta",
 		"Feedback":"Positive",
 		"Summary":"You are emotionally aware: you are aware of your feelings and how to express them. You are empathetic: you feel what others feel and are compassionate towards them. And you are altruistic: you feel fulfilled when helping others, and will go out of your way to do so.",
@@ -15,8 +16,7 @@ function main2(){
 		"Comments":"40",
 		"Wordnet":"static/cloud.jpg"
 	};
-	//console.log(obj);
-	//console.log(obj["Username"]);
+	*/
 	document.querySelector("#Username").innerHTML = obj["Username"]; 
 	document.querySelector("#Feedback").innerHTML = obj["Feedback"];
 	document.querySelector("#Summary").innerHTML = obj["Summary"];
@@ -38,6 +38,7 @@ function main2(){
 		count++;
 	};
 
+	document.querySelector("#avatar-ur").innerHTML = '<img src="'+obj["Wordnet"]+'" class="img-rounded" alt="Cinque Terre">';
 	document.querySelector("#Commit").innerHTML = "Commits:" + obj["Commits"];
 	document.querySelector("#Issues").innerHTML = "Issues:" + obj["Issues"];
 	document.querySelector("#Comments").innerHTML = "Comments:" + obj["Comments"];
@@ -46,3 +47,28 @@ function main2(){
 }
 
 document.addEventListener("DOMContentLoaded", main2());
+
+setTimeout(function start (){
+  
+	$('.bar').each(function(i){  
+	  var $bar = $(this);
+	  $(this).append('<span class="count"></span>')
+	  setTimeout(function(){
+		$bar.css('width', $bar.attr('data-percent'));      
+	  }, i*100);
+	});
+  
+  $('.count').each(function () {
+	  $(this).prop('Counter',0).animate({
+		  Counter: $(this).parent('.bar').attr('data-percent')
+	  }, {
+		  duration: 2000,
+		  easing: 'swing',
+		  step: function (now) {
+			  $(this).text(Math.ceil(now) +'%');
+		  }
+	  });
+  });
+  
+  }, 500)
+  

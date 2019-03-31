@@ -6,7 +6,7 @@
           <div class="four wide column">
             <div class="ui fluid card">
               <div class="image">
-                <img class="ui medium circular image" src="{{ url_for('static', filename='img_avatar1.png') }}" alt="Card image">
+                <img id="avatar-url" class="ui medium circular image" alt="Card image">
               </div>
               <div class="content ui image label" id="Username">
                 <a class="header">Jane Doe</a>
@@ -43,15 +43,9 @@
         <div class="ui two column very relaxed grid">
             <div class="ui column">
                 <label>Personality</label>
-
-                <p id="Trait1">
-                </p>
-
-                <p id="Trait2">
-                </p>
-
-                <p id="Trait3">
-                </p>
+                <p id="Trait1"></p>
+                <p id="Trait2"></p>
+                <p id="Trait3"></p>
             </div>
             <div class="ui column">
                 <p id="Commit">
@@ -69,7 +63,7 @@
     
     <div class="ui segment">
         <div class="ui container" id="Wordnet">
-            <img src="{{ url_for('static', filename='download.jpg') }}" class="img-rounded" alt="Cinque Terre">
+            <img src="{{ url_for('static', filename='cloud.jpg') }}" class="img-rounded" alt="Cinque Terre">
         </div>
     </div>
 </div>

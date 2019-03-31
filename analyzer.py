@@ -59,7 +59,7 @@ def base():
 """
 @app.route('/', methods=['GET'])
 def index():
-    
+    return render_template('result.html', title='Home')
     username = "prakhar897"
 
     commits = get_commits(username)
@@ -142,7 +142,7 @@ def index():
             )
         ).get_result()
     '''
-    return render_template('result.html', title='Home')
+    
     response = {
         'username': username, 'avatar-url': avatar_url, 'profile': profile
         }
